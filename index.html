@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <title>Word Game</title>
+</head>
+<!--Create a heading stating the game and the instructions-->
+<!--Create a button that begins the game-->
+<!--Create area where question and possible answers can be displayed-->
+<body>
+<header>
+    <h1>Test your coding knowledge!</h1>
+</header>
+<hr>
+<section id="maincontainer">
+
+    <button id="quizstart">Start Quiz!</button>
+
+    <div id="quiz" style="display: none">
+
+        <div id="question"></div>
+        <div id="choices">
+            <div class="choice" id="A" ></div>
+            <div class="choice" id="B" ></div>
+            <div class="choice" id="C" ></div>
+        </div>
+        <div id="timer">
+            <div id="counter"></div>
+            <div id="timeGauge"></div>
+        </div>
+    </div>
+    <aside id="scoreboard"></aside>
+
+</section>
+   
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
