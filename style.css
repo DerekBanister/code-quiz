@@ -71,7 +71,7 @@ h2{
     cursor: pointer;
     color : blue;
 }
-#quizstart:hover{
+#quizStart:hover{
     border: 2px solid blue;
 }
 #question{

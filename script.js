@@ -1,5 +1,5 @@
 //declare my questions and answers globally in one massive object
-var questionContainer = [
+var questionArray = [
     {
         question: "What type of event makes a button work?",
         answers: ["clickOn","doubleClick","onClick",],
@@ -23,7 +23,7 @@ var questionContainer = [
 var scoreboard = 0;
 var questionAmount = 0;
 var timerBox = document.querySelector("#timer");
-var questionContainer = document.querySelector("#questions");
+var questionBox = document.querySelector("#questions");
 var choicesContainer = document.querySelector("#choices");
 var containerMain = document.querySelector("#mainContainer");
 var startButton = document.querySelector("#quizStart");
@@ -33,6 +33,7 @@ var createUl = document.createElement("ul");
 var totalSeconds = 60;
 var holdPenaltyTime= 0;
 var penaltyTime = 10;
+var createList = document.createElement("ul");
 
  
 //starts timer and tracks penalty times.
@@ -52,13 +53,35 @@ quizStart.addEventListener("click", function(){
 }
    //TIMER WORKING!!!
 console.log(quizStart, timerBox)
-
+displayQuestion(questionAmount);
 } 
 
  ) 
  //function that displays questions on screen. Need to call it in the function
  //above with the eventlistener. Giving function parameter of my object.
  function displayQuestion(questionAmount){
+    questions.innerHTML = "";
+    createList.innerHTML = "";
+    //need a loop that goes through my question array
+        for (var i = 0; i <questionArray.length; i++){
+            var gameQuestion = questionArray[questionAmount].question;
+            var gameAnswers = questionArray[questionAmount].answers;
+            questionBox.textContent = gameQuestion;
+
+            console.log(questionContainer);
+        }
+        //select one question
+            gameAnswers.forEach(function (newQuestion){
+                var listQuestion = document.createElement("li");
+                listQuestion.textContent = newQuestion;
+                questionBox.appendChild(createList);
+                createList.appendChild(listQuestion);
+            }
+            )
+        //question is displaying atleast, need to figure out answers and to 
+        //hide button.
+
+
 
  }
 
