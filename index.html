@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     
     
-    <title>Word Game</title>
+    <title>Code Quiz</title>
 </head>
 <!--Create a heading stating the game and the instructions-->
 <!--Create a button that begins the game-->
@@ -16,11 +16,11 @@
 <body>
 <header>
     <h1>Test your coding knowledge!</h1>
+    <h2 id = "instruct">You have 1 minute to finish the quiz. Wrong answers will be penalized by 10 seconds</h2>
     
 </header>
 <hr>
 <section id = "timer">
-    <p>Timer</p>
         <div id="counter"></div>
 </section>
 
@@ -35,22 +35,17 @@
 
 <section id="maincontainer">
 
-    <button id="quizstart">Start Quiz!</button>
 
-        <div id="question">Filler Question</div>
-        
-        <div id="choices">
-            <div class="choice" id="A"></div>
-            <div class="choice" id="B"></div>
-            <div class="choice" id="C"></div>
-        </div>
-    
+        <div id="question"></div>
+        <div id="choices"></div>
 
+        <button id="quizstart">Start Quiz!</button>
+            
 </section>
    
-
+<script src="script.js"></script>
 </body>
 
-<script src="script.js"></script>
+
 
 </html>
