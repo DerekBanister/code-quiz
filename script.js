@@ -70,14 +70,14 @@ displayQuestion(questionAmount);
 
            // console.log(questionArray);
         }
-        
+        //i think bug is in this function
             gameAnswers.forEach(function (newQuestion){
                 var listQuestion = document.createElement("li");
                 listQuestion.textContent = newQuestion;
                 questionBox.appendChild(createList);
                 createList.appendChild(listQuestion);
                 listQuestion.addEventListener("click", (evaluate));
-                console.log(listQuestion);
+                console.log(createList);
          }
      )
 }
@@ -85,18 +85,18 @@ displayQuestion(questionAmount);
 function evaluate(event){
     var choice = event.target;
 
-        if (choice.matches("li")){
+    if (choice.matches("li")){
             var createDiv = document.createElement("div");
-            createDiv.setAttribute("id", "div");
+           createDiv.setAttribute("id", "createDiv");
             //adding 1 to score and displaying if answer "correct"
-        if (choice.textContent == questionArray[questionAmount].answers){
+        if (choice.textContent == questionArray[questionAmount].correctAnswer){
             userScore++;
             createDiv.textContent = "Correct!";
         }
         //penalize and display "wrong"
         else {
             totalSeconds = totalSeconds - penaltyTime;
-            createDiv.textContent = "Wrong!";
+           createDiv.textContent = "Incorrect!";
         }
 
         }
@@ -110,13 +110,14 @@ function evaluate(event){
     else{
         displayQuestion(questionAmount);
     }    
-        questionBox.appendChild(choice);
-    console.log();
+        questionBox.appendChild(createDiv);
+    
+      console.log(createDiv);
     
 }
 
-//Quiz is moving! Some bugs to work out still. Answer that is clicked
-//is showing on next screen. onClick events are functioning but bugs
+//Quiz is moving! Fixed bugs regarding right and wrong questions. Everything displaying
+// as intended!
 
 
  
