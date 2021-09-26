@@ -3,36 +3,34 @@ var questionArray = [
     {
         question: "What type of event in JavaScript makes a button work?",
         answers: ["clickOn","doubleClick","onClick",],
-        correct: "onClick"
+        correctAnswer: "onClick"
            
     },
     {
         question: "What are the 3 main programming languages of the internet?",
         answers: ["jQuery, MongoDB, Python","HTML, CSS, JavaScript","C++, CSharp, Unity"],
-        correct: "HTML, CSS, JavaScript",    
+        correctAnswer: "HTML, CSS, JavaScript",    
   
     },
     {
         question: "What is one way you can make a website mobile-friendly?",
-        answers: ["Media Queries","Smaller font sizes", "You dont mobile users do not matter"],
+        answers: ["Media Queries","Smaller font sizes", "You dont, mobile users do not matter"],
         correctAnswer: "Media Queries"   
     },
 
 ]
 //declare all global variables I will need
-var scoreboard = 0;
+var userScore = 0;
 var questionAmount = 0;
 var timerBox = document.querySelector("#timer");
-var questionBox = document.querySelector("#questions");
-var containerMain = document.querySelector("#mainContainer");
+var questionBox = document.querySelector("#maincontainer");
 var startButton = document.querySelector("#quizStart");
-var createUl = document.createElement("ul");
-
+var createList = document.createElement("ul");
 //variables for timer
 var totalSeconds = 60;
 var holdPenaltyTime= 0;
-var penaltyTime = 10;
-var createList = document.createElement("ul");
+var penaltyTime = 15;
+
 
  
 //starts timer and tracks penalty times. Calling displayQuestion.
@@ -62,7 +60,7 @@ displayQuestion(questionAmount);
  //function that displays questions on screen. Need to call it in the function
  //above with the eventlistener. Giving function parameter of my object.
  function displayQuestion(questionAmount){
-    questions.innerHTML = "";
+    questionBox.innerHTML = "";
     createList.innerHTML = "";
     //need a loop that goes through my question array
         for (var i = 0; i <questionArray.length; i++){
@@ -70,20 +68,55 @@ displayQuestion(questionAmount);
             var gameAnswers = questionArray[questionAmount].answers;
             questionBox.textContent = gameQuestion;
 
-            console.log(questionArray);
+           // console.log(questionArray);
         }
-        //select one question and create list
+        
             gameAnswers.forEach(function (newQuestion){
                 var listQuestion = document.createElement("li");
                 listQuestion.textContent = newQuestion;
                 questionBox.appendChild(createList);
                 createList.appendChild(listQuestion);
+                listQuestion.addEventListener("click", (evaluate));
+                console.log(listQuestion);
          }
      )
 }
-//everything displaying as intended. Next is to figure out how to go to
-//next question and create if statements for correct answers.
+//comparing choices with answers
+function evaluate(event){
+    var choice = event.target;
 
+        if (choice.matches("li")){
+            var createDiv = document.createElement("div");
+            createDiv.setAttribute("id", "div");
+            //adding 1 to score and displaying if answer "correct"
+        if (choice.textContent == questionArray[questionAmount].answers){
+            userScore++;
+            createDiv.textContent = "Correct!";
+        }
+        //penalize and display "wrong"
+        else {
+            totalSeconds = totalSeconds - penaltyTime;
+            createDiv.textContent = "Wrong!";
+        }
+
+        }
+   
+        questionAmount++;
+
+    if (questionAmount >= questionArray.length){
+        //finish quiz, function that ends quiz and displays score
+    }
+    //if quiz not finished display next question
+    else{
+        displayQuestion(questionAmount);
+    }    
+        questionBox.appendChild(choice);
+    console.log();
+    
+}
+
+//Quiz is moving! Some bugs to work out still. Answer that is clicked
+//is showing on next screen. onClick events are functioning but bugs
 
 
  
