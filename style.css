@@ -96,6 +96,10 @@ h2{
 
 li{
     list-style: lower-alpha;
+    padding: 10px;
+}
+li:hover{
+    cursor: pointer;
 }
 @media only screen and (max-width: 1000px) {
     #maincontainer {

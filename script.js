@@ -107,7 +107,7 @@ function evaluate(event){
         //finish quiz, function that ends quiz and displays score
         finishQuiz();
         //replacing incorrect/correct message on final screen.
-        createDiv.textContent = "You got " + userScore + "/" + questionArray.length + " Correct!";
+        createDiv.textContent = "You got " + userScore + " Correct!";
     }
     //if quiz not finished display next question
     else{
@@ -151,5 +151,5 @@ function finishQuiz(){
     }
 
 }
-//finish quiz is ending quiz and displaying score. Incorrect/correct from 
-//last question still displaying at end of quiz page.
+//finish quiz is ending quiz and displaying score. Time to figure out
+//localstorage and scoreboard

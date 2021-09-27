@@ -1,36 +1,7 @@
-# Project Title
+# Coding Quiz
 
-One paragraph of project description goes here.
+This application is a quiz with topics related to coding. You have 60 seconds to answer 3 questions and each wrong answer deducts your time by 15 seconds. At the end of the quiz your score is displayed and saved to the higscores presented on the page.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development environment running.
-
-Say what the step will be:
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
 
 
 ## Built With
@@ -41,25 +12,13 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Deployed Link
 
-* [See Live Site](#)
+* [Test your coding knowledge!](https://derekbanister.github.io/code-quiz/)
 
 
 ## Authors
 
 * **YOUR NAME** 
 
-- [Link to Portfolio Site](#)
-- [Link to Github](https://github.com/)
-- [Link to LinkedIn](https://www.linkedin.com/)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License 
-
-## Acknowledgments
-
-* Hat tip to anyone whose code, libraries, packages, or UI was used  / inspired from
-* Inspiration
-* etc
+- [Link to Portfolio Site](https://derekbanister.github.io/First-Portfolio/)
+- [Link to Github](https://github.com/DerekBanister)
+- [Link to LinkedIn](https://www.linkedin.com/in/derek-banister/)
