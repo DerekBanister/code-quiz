@@ -106,6 +106,8 @@ function evaluate(event){
     if (questionAmount >= questionArray.length){
         //finish quiz, function that ends quiz and displays score
         finishQuiz();
+        //replacing incorrect/correct message on final screen.
+        createDiv.textContent = "You got " + userScore + "/" + questionArray.length + " Correct!";
     }
     //if quiz not finished display next question
     else{
@@ -118,7 +120,7 @@ function evaluate(event){
 }
 
 //Quiz is moving! Fixed bugs regarding right and wrong questions. Everything displaying
-// as intended!
+//as intended!
 
 //Function that stores the data and adds/displays to scoreboard.
 function finishQuiz(){
@@ -145,7 +147,7 @@ function finishQuiz(){
 
         questionBox.appendChild(createP3);
 
-        console.log(createP3);
+        //console.log(createP3);
     }
 
 }
