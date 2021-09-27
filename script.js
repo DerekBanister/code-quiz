@@ -58,11 +58,11 @@ displayQuestion(questionAmount);
 
  ) 
  //function that displays questions on screen. Need to call it in the function
- //above with the eventlistener. Giving function parameter of my object.
+ //above with the eventlistener.
  function displayQuestion(questionAmount){
     questionBox.innerHTML = "";
     createList.innerHTML = "";
-    //need a loop that goes through my question array
+    //need a loop that goes through my question array. Setting variable for q and a
         for (var i = 0; i <questionArray.length; i++){
             var gameQuestion = questionArray[questionAmount].question;
             var gameAnswers = questionArray[questionAmount].answers;
@@ -70,14 +70,14 @@ displayQuestion(questionAmount);
 
            // console.log(questionArray);
         }
-        //i think bug is in this function
+        //bug fixed in function
             gameAnswers.forEach(function (newQuestion){
                 var listQuestion = document.createElement("li");
                 listQuestion.textContent = newQuestion;
                 questionBox.appendChild(createList);
                 createList.appendChild(listQuestion);
                 listQuestion.addEventListener("click", (evaluate));
-                console.log(createList);
+               // console.log(createList);
          }
      )
 }
@@ -105,6 +105,7 @@ function evaluate(event){
 
     if (questionAmount >= questionArray.length){
         //finish quiz, function that ends quiz and displays score
+        finishQuiz();
     }
     //if quiz not finished display next question
     else{
@@ -112,15 +113,41 @@ function evaluate(event){
     }    
         questionBox.appendChild(createDiv);
     
-      console.log(createDiv);
+     // console.log(createDiv);
     
 }
 
 //Quiz is moving! Fixed bugs regarding right and wrong questions. Everything displaying
 // as intended!
 
+//Function that stores the data and adds/displays to scoreboard.
+function finishQuiz(){
+    questionBox.innerHTML= "";
+    timerBox.innerHTML= "";
 
- 
+    //end of quiz heading
+    var createH2 = document.createElement("h1");
+    createH2.setAttribute("id", "createH2");
+    createH2.textContent = "End of quiz!";
 
+    questionBox.appendChild(createH2);
+    //final score paragraph
+    var createText = document.createElement("p");
+    createText.setAttribute("id", "createText");
 
-//Function that stores the data and adds to scoreboard.
+    questionBox.appendChild(createText);
+
+    if (totalSeconds >= 0){
+        var remainingTime = totalSeconds;
+        var createP3 = document.createElement("p");
+        clearInterval(holdPenaltyTime);
+        createP3.textContent = "Your score is: " + remainingTime;
+
+        questionBox.appendChild(createP3);
+
+        console.log(createP3);
+    }
+
+}
+//finish quiz is ending quiz and displaying score. Incorrect/correct from 
+//last question still displaying at end of quiz page.
