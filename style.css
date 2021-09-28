@@ -93,6 +93,9 @@ h2{
     font-size: 30px;
 
 }
+#score{
+    list-style-type: none;
+}
 
 li{
     list-style: lower-alpha;
