@@ -171,7 +171,7 @@ var createLabel = document.createElement("label");
     createSubmit.textContent = "Submit";
 
     questionBox.appendChild(createSubmit);
-
+    
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
 
@@ -194,9 +194,11 @@ var createLabel = document.createElement("label");
             allScores.push(finalScore);
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
-            // Travels to final page
-            window.location.replace("./HighScores.html");
+            //goes to highscores.html to show initials/score
+            window.location.replace("./highscores.html");
         }
-    });
+    }
+    
+);
 
 }

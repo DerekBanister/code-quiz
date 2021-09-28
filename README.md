@@ -1,6 +1,6 @@
 # Coding Quiz
 
-This application is a quiz with topics related to coding. You have 60 seconds to answer 3 questions and each wrong answer deducts your time by 15 seconds. At the end of the quiz your score is displayed and saved to the higscores presented on the page.
+This application is a quiz with topics related to coding. You have 60 seconds to answer 3 questions and each wrong answer deducts your time by 15 seconds. At the end of the quiz your score is displayed and saved to the higscores presented on the highscores page.
 
 
 
