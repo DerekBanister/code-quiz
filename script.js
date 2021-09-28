@@ -15,7 +15,20 @@ var questionArray = [
     {
         question: "What is one way you can make a website mobile-friendly?",
         answers: ["Media Queries","Smaller font sizes", "You dont, mobile users do not matter"],
-        correctAnswer: "Media Queries"   
+        correctAnswer: "Media Queries"  
+         
+    },
+    {
+        question: "Who invented JQuery?",
+        answers: ["Albert Einstein", "John Resig", "Elon Musk"],
+        correctAnswer: "John Resig",    
+  
+    },
+    {
+        question: "How many programming languages are there?",
+        answers: ["700", "1050", "120"],
+        correctAnswer: "700", 
+         
     },
 
 ]
@@ -169,20 +182,14 @@ var createLabel = document.createElement("label");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "Submit");
     createSubmit.textContent = "Submit";
-
+    //appending button
     questionBox.appendChild(createSubmit);
     
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
-
-        if (initials === null) {
-
-            console.log("No value entered!");
-
-        } else {
-            var finalScore = {
-                initials: initials,
-                score: totalSeconds
+        var finalScore = {
+            initials: initials,
+             score: totalSeconds
             }
             console.log(finalScore);
             var allScores = localStorage.getItem("allScores");
@@ -197,7 +204,6 @@ var createLabel = document.createElement("label");
             //goes to highscores.html to show initials/score
             window.location.replace("./highscores.html");
         }
-    }
     
 );
 
